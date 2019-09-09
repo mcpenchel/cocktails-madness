@@ -1,7 +1,12 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
-<% @cocktails.each do |cocktail| %>
-<%= link_to cocktail.name, cocktails_path(cocktail) %>
-<%= image_tag "/assets/images/drinks.jpg", alt: "Le Wagon", width: 200 %><br>
+<p>List of cocktails!!</p>
 
+<% @cocktails.each do |cocktail| %>
+  <%= link_to cocktail.name, cocktail_path(cocktail) %>
+  <%= image_tag "drink.jpg", alt: "Le Wagon", width: 200 %>
+  <%= link_to "Destroy", cocktail_path(cocktail), method: "DELETE" %>
+  <%= link_to "Edit", edit_cocktail_path(cocktail) %>
+  <br>
 <% end %>
+
+
+<h3><%= link_to "New Cocktail", new_cocktail_path %></h3>
